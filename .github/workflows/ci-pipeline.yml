@@ -115,7 +115,7 @@ jobs:
           name: zap-report
           path: report_json.json
   image-scan:
-    needs: [test]
+    needs: test
     if: true
     runs-on: ubuntu-latest
     steps:
@@ -240,7 +240,7 @@ jobs:
           echo "Zap upload: $ZAP_RESPONSE"
   submit_reports:
    needs: [test, sonarqube, dast, build]
-   if: true
+   if: false
    runs-on: ubuntu-latest
    steps:
     - uses: actions/download-artifact@v4
