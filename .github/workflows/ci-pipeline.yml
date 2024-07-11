@@ -218,7 +218,7 @@ jobs:
             cosign sign --yes ${IMAGE}
   submit_results:
     needs: [build]
-    if: false
+    if: true
     runs-on: ubuntu-latest
     steps:
       - uses: azure/login@v1
